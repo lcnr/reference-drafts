@@ -6,7 +6,8 @@ r[type.alias]
 
 r[type.alias.rigid]
 
-Aliases might be treated as rigid in their current environment. In this case they behave like other rigid types.
+Aliases might be treated as *rigid* in their current environment. In this case they behave like other types.
+Their equality is structural, *rigid* aliases are only equal if both have the same type constructor and equal corresponding arguments.
 
 r[type.alias.normalization]
 
