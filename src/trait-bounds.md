@@ -46,7 +46,7 @@ certain common cases:
 
 r[bound.global]
 
-A bound which does not use the item's parameters or any higher-ranked lifetimes are considered global.
+Bounds which does not use the item's parameters or any higher-ranked lifetimes are considered global.
 
 An error is emitted if a global bound cannot be satisfied in an empty environment.
 
