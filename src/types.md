@@ -153,12 +153,14 @@ let a: List<i32> = List::Cons(7, Box::new(List::Cons(13, Box::new(List::Nil))));
 
 r[types.equality]
 
-Equality and subtyping of types is generally structural. If the outermost type constructors are the same,
-corresponding generic arguments are compared. The only exceptions from this rule are higher ranked types and alias types.
+Equality and subtyping of types is generally structural; if the outermost type constructors are the same,
+their corresponding generic arguments are pairwise compared. We say types with this equality behavior are *rigid*. The only exceptions from this rule are higher ranked types and alias types.
+
+r[types.equality.rigid]
 
 r[types.equality.aliases]
 
-Aliases are compared by first normalizing them to a *rigid* type? and then equating their type constructors and recursing into their generic arguments.
+Aliases are compared by first normalizing them to a *rigid* type and then equating their type constructors and recursing into their generic arguments.
 
 r[types.equality.higher-ranked]
 
@@ -171,7 +173,6 @@ Subtyping is checked by instantiating the `for` of the subtype with inference va
 r[types.equality.higher-ranked.eq]
 
 Equality is checked by both instantiating the `for` of the lhs with inference variables and the `for` of the rhs with placeholders before equating them, and also doing the opposite.
-
 
 [Array]: types/array.md
 [Boolean]: types/boolean.md
